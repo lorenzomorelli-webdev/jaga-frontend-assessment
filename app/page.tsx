@@ -1,5 +1,6 @@
 import Title from "@/app/components/custom/title";
 import Navbar from "./components/custom/navbar";
+import SectionsContainer from "./components/sections/sectionsContainer";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         className={"font-semibold text-6xl "}
       />
       <Navbar />
+      <SectionsContainer />
     </main>
   );
 }

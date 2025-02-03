@@ -1,6 +1,10 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState } from 'react';
+/**
+ * TUTTO DA RIVEDERE!! questo è solo lo scheletro generato dall'IA
+ *
+ */
+import { createContext, useContext, useState } from "react";
 
 type Choice = {
   cars: any[];
@@ -16,7 +20,7 @@ type ChoiceContextType = {
 const initialState: Choice = {
   cars: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 const ChoiceContext = createContext<ChoiceContextType | undefined>(undefined);
@@ -28,9 +32,8 @@ export function ChoiceProvider({ children }: { children: React.ReactNode }) {
     <ChoiceContext.Provider
       value={{
         choice,
-        setChoice
-      }}
-    >
+        setChoice,
+      }}>
       {children}
     </ChoiceContext.Provider>
   );
@@ -39,7 +42,7 @@ export function ChoiceProvider({ children }: { children: React.ReactNode }) {
 export function useChoiceContext() {
   const context = useContext(ChoiceContext);
   if (context === undefined) {
-    throw new Error('useChoiceContext must be used within a ChoiceProvider');
+    throw new Error("useChoiceContext must be used within a ChoiceProvider");
   }
   return context;
 }

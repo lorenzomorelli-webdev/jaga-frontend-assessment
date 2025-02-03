@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ className }: NavbarProps) {
-  const { step, setStepLogger } = useStepContext();
+  const { step, setStep } = useStepContext();
   const activeStyle = "text-amber-300 border-b-2 border-amber-300";
   const defaultStyle = "p-1";
 
@@ -20,8 +20,8 @@ export default function Navbar({ className }: NavbarProps) {
       {stepLabels.map((stepLabel) => (
         <a
           key={stepLabel}
-          href={`#${stepLabel}`}
-          onClick={() => setStepLogger(stepLabel)}
+          href="#"
+          onClick={() => setStep(stepLabel)}
           className={step == stepLabel ? cn(defaultStyle, activeStyle) : cn(defaultStyle)}>
           {stepLabel}
         </a>
