@@ -14,13 +14,13 @@ export function StepProvider({ children }: { children: React.ReactNode }) {
   const [step, setStep] = useState<StepType>("Models");
 
   return (
-    <StepContext.Provider
+    <StepContext
       value={{
         step,
         setStep,
       }}>
       {children}
-    </StepContext.Provider>
+    </StepContext>
   );
 }
 
